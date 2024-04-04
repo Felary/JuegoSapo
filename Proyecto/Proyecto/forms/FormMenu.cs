@@ -12,9 +12,15 @@ namespace Proyecto.forms
 {
     public partial class FormMenu : Form
     {
+        #region Atributos
+        #endregion
         public FormMenu()
         {
             InitializeComponent();
         }
+
+
+
+
     }
 }
