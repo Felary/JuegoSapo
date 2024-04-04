@@ -13,6 +13,7 @@ namespace Proyecto.forms
     public partial class FormContenedor : Form
     {
         #region Atributos
+        FormMenu nuevoMenu;
         FormJuego nuevoJuego;
         #endregion
         public FormContenedor()
@@ -20,29 +21,32 @@ namespace Proyecto.forms
             InitializeComponent();
             iniciarJuego();
         }
-
-
-
-
-
         #region Metodos y Funciones
         private void iniciarJuego()
+        {
+            if (nuevoMenu == null)
+            {
+                nuevoMenu = new FormMenu();
+                nuevoMenu.MdiParent = this;
+
+                nuevoMenu.Show();
+            }
+
+        }
+
+        #endregion
+
+        private void btnJugar_Click(object sender, EventArgs e)
         {
             if (nuevoJuego == null)
             {
                 nuevoJuego = new FormJuego();
                 nuevoJuego.MdiParent = this;
-                nuevoJuego.FormClosed += new FormClosedEventHandler(cerrarVentana);
+
                 nuevoJuego.Show();
+                this.Visible = false;
             }
 
         }
-        private void cerrarVentana(object sender, FormClosedEventArgs arg) //Accion para cuando se cierra la ventana
-        {
-            nuevoJuego = (sender is FormJuego) ? null : nuevoJuego;
-        }
-        #endregion
-
-
     }
 }
