@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="control\Preguntas.cs" />
     <Compile Include="forms\FormContenedor.cs">
       <SubType>Form</SubType>
     </Compile>

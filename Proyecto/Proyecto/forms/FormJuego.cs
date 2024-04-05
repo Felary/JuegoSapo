@@ -9,6 +9,7 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Proyecto.control;
 
 namespace Proyecto.forms
 {
@@ -16,11 +17,16 @@ namespace Proyecto.forms
     {
         #region Atributos
         int vidas = 3, puntuacion = 0;
-        SoundPlayer freno = new SoundPlayer(@"F:\SONIDOS\freno.wav");
+        SoundPlayer freno = new SoundPlayer(@"D:\SONIDOS\freno.wav");
+        Preguntas nuevasPreguntas;
         #endregion
         public FormJuego()
         {
             InitializeComponent();
+            //se inicializa el objeto de la clase Preguntas
+            nuevasPreguntas = new Preguntas();
+            //se llena el array de preguntas y opciones
+            llenarArrays();
         }
 
         private void timer_Tick(object sender, EventArgs e) //Método para iniciar el juego
@@ -44,6 +50,8 @@ namespace Proyecto.forms
             bordesRana(imgRana);
             //Llamar al método para verificar la colisión
             colisionCarros();
+            //Llamar al método para verificar la colisión con las preguntas
+            colisionPreguntas();
         }
         public void moverImagenes() //Método para mover las imágenes
         {
@@ -111,6 +119,9 @@ namespace Proyecto.forms
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
+                //suena el freno
+                freno.Play();
+
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
@@ -121,9 +132,6 @@ namespace Proyecto.forms
                 {
                     //se detiene el tiempo
                     timer.Stop();
-
-                    //suena el freno
-                    freno.Play();
                 }
             }
             else if (imgRana.Bounds.IntersectsWith(imgLamboArriba.Bounds))
@@ -134,6 +142,9 @@ namespace Proyecto.forms
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
+                //suena el freno
+                freno.Play();
+
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
@@ -144,9 +155,6 @@ namespace Proyecto.forms
                 {
                     //se detiene el tiempo
                     timer.Stop();
-
-                    //suena el freno
-                    freno.Play();
                 }
             }
             else if (imgRana.Bounds.IntersectsWith(imgTaxiArriba.Bounds))
@@ -157,6 +165,9 @@ namespace Proyecto.forms
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
+                //suena el freno
+                freno.Play();
+
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
@@ -167,9 +178,6 @@ namespace Proyecto.forms
                 {
                     //se detiene el tiempo
                     timer.Stop();
-
-                    //suena el freno
-                    freno.Play();
                 }
             }
             else if (imgRana.Bounds.IntersectsWith(imgCisternaArriba.Bounds))
@@ -180,6 +188,9 @@ namespace Proyecto.forms
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
+                //suena el freno
+                freno.Play();
+
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
@@ -191,8 +202,7 @@ namespace Proyecto.forms
                     //se detiene el tiempo
                     timer.Stop();
 
-                    //suena el freno
-                    freno.Play();
+
                 }
             }
             else if (imgRana.Bounds.IntersectsWith(imgRetroArriba.Bounds))
@@ -203,6 +213,9 @@ namespace Proyecto.forms
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
+                //suena el freno
+                freno.Play();
+
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
@@ -213,9 +226,6 @@ namespace Proyecto.forms
                 {
                     //se detiene el tiempo
                     timer.Stop();
-
-                    //suena el freno
-                    freno.Play();
                 }
             }
             else if (imgRana.Bounds.IntersectsWith(imgFerraryAbajo.Bounds))
@@ -226,6 +236,9 @@ namespace Proyecto.forms
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
+                //suena el freno
+                freno.Play();
+
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
@@ -236,9 +249,6 @@ namespace Proyecto.forms
                 {
                     //se detiene el tiempo
                     timer.Stop();
-
-                    //suena el freno
-                    freno.Play();
                 }
             }
             else if (imgRana.Bounds.IntersectsWith(imgTaxiAbajo.Bounds))
@@ -249,6 +259,9 @@ namespace Proyecto.forms
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
+                //suena el freno
+                freno.Play();
+
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
@@ -259,9 +272,6 @@ namespace Proyecto.forms
                 {
                     //se detiene el tiempo
                     timer.Stop();
-
-                    //suena el freno
-                    freno.Play();
                 }
             }
             else if (imgRana.Bounds.IntersectsWith(imgBusAbajo.Bounds))
@@ -272,6 +282,9 @@ namespace Proyecto.forms
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
+                //suena el freno
+                freno.Play();
+
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
@@ -282,9 +295,6 @@ namespace Proyecto.forms
                 {
                     //se detiene el tiempo
                     timer.Stop();
-
-                    //suena el freno
-                    freno.Play();
                 }
             }
         }
@@ -292,8 +302,19 @@ namespace Proyecto.forms
         {
             if (imgRana.Bounds.IntersectsWith(imgPregunta.Bounds))
             {
+                //Se oculta la imagen de la pregunta y la flecha
                 imgPregunta.Visible = false;
                 imgFlecha.Visible = false;
+
+                //Se actualiza la pregunta en el lblPregunta
+                lblPregunta.Text = nuevasPreguntas.ArrayPreguntas[0];
+
+                //Se actualiza las opciones de respuesta en los lblRespuesta_1, lblRespuesta_2 y lblRespuesta_3
+                lblRespuesta_1.Text = nuevasPreguntas.ArrayOpciones[0, 0];
+
+
+
+
             }
         }
         public void quitarVidas() //funcion para quitar vidas
@@ -353,6 +374,15 @@ namespace Proyecto.forms
                 //se muestra la imagen de la rana mirando hacia abajo
                 imgRana.Image = Proyecto.Properties.Resources.ranaAtras;
             }
+        }
+        public void llenarArrays() //Método para llenar los arrays de preguntas y opciones
+        {
+            //Llenar el array de preguntas
+            nuevasPreguntas.llenarArrayPreguntas();
+            //Llenar el array de opciones
+            nuevasPreguntas.llenarArrayOpciones();
+            //Llenar el array de respuestas correctas
+            nuevasPreguntas.llenarArrayCorrectas();
         }
 
     }

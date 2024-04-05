@@ -10,3 +10,15 @@ C:\Users\SDB-18\Downloads\JuegoSapo-main\Proyecto\Proyecto\obj\Debug\Proyecto.cs
 C:\Users\SDB-18\Downloads\JuegoSapo-main\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.CoreCompileInputs.cache
 C:\Users\SDB-18\Downloads\JuegoSapo-main\Proyecto\Proyecto\obj\Debug\Proyecto.exe
 C:\Users\SDB-18\Downloads\JuegoSapo-main\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.AssemblyReference.cache
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\obj\Debug\Proyecto.forms.FormContenedor.resources
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\obj\Debug\Proyecto.forms.FormJuego.resources
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\obj\Debug\Proyecto.forms.FormMenu.resources
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.cache
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.CoreCompileInputs.cache
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\bin\Debug\Proyecto.exe
+D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\bin\Debug\Proyecto.pdb

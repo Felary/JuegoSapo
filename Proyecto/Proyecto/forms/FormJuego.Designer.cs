@@ -45,6 +45,8 @@
             this.imgPregunta = new System.Windows.Forms.PictureBox();
             this.imgFlecha = new System.Windows.Forms.PictureBox();
             this.txtPuntuacion = new System.Windows.Forms.TextBox();
+            this.lblRespuesta_1 = new System.Windows.Forms.Label();
+            this.lblPregunta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgRana)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBusAbajo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRetroArriba)).BeginInit();
@@ -231,6 +233,25 @@
             this.txtPuntuacion.Text = "0";
             this.txtPuntuacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // lblRespuesta_1
+            // 
+            this.lblRespuesta_1.AutoSize = true;
+            this.lblRespuesta_1.Location = new System.Drawing.Point(322, 207);
+            this.lblRespuesta_1.Name = "lblRespuesta_1";
+            this.lblRespuesta_1.Size = new System.Drawing.Size(35, 13);
+            this.lblRespuesta_1.TabIndex = 16;
+            this.lblRespuesta_1.Text = "label1";
+            // 
+            // lblPregunta
+            // 
+            this.lblPregunta.AutoSize = true;
+            this.lblPregunta.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPregunta.Location = new System.Drawing.Point(378, 399);
+            this.lblPregunta.Name = "lblPregunta";
+            this.lblPregunta.Size = new System.Drawing.Size(97, 33);
+            this.lblPregunta.TabIndex = 17;
+            this.lblPregunta.Text = "label1";
+            // 
             // FormJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +259,8 @@
             this.BackgroundImage = global::Proyecto.Properties.Resources.fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(945, 633);
+            this.Controls.Add(this.lblPregunta);
+            this.Controls.Add(this.lblRespuesta_1);
             this.Controls.Add(this.txtPuntuacion);
             this.Controls.Add(this.imgFlecha);
             this.Controls.Add(this.imgPregunta);
@@ -296,5 +319,7 @@
         private System.Windows.Forms.PictureBox imgPregunta;
         private System.Windows.Forms.PictureBox imgFlecha;
         private System.Windows.Forms.TextBox txtPuntuacion;
+        private System.Windows.Forms.Label lblRespuesta_1;
+        private System.Windows.Forms.Label lblPregunta;
     }
 }
