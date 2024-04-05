@@ -18,6 +18,7 @@ namespace Proyecto.forms
         public FormMenu()
         {
             InitializeComponent();
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -27,12 +28,6 @@ namespace Proyecto.forms
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-            if (nuevoJuego == null)
-            {
-                nuevoJuego = new FormJuego();
-                nuevoJuego.Show();
-                this.Close();
-            }
 
         }
     }

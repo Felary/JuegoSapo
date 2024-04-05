@@ -26,27 +26,16 @@ namespace Proyecto.forms
         {
             if (nuevoMenu == null)
             {
-                nuevoMenu = new FormMenu();
-                nuevoMenu.MdiParent = this;
-
-                nuevoMenu.Show();
-            }
-
-        }
-
-        #endregion
-
-        private void btnJugar_Click(object sender, EventArgs e)
-        {
-            if (nuevoJuego == null)
-            {
                 nuevoJuego = new FormJuego();
                 nuevoJuego.MdiParent = this;
+                nuevoMenu = new FormMenu(nuevoJuego);
+                nuevoMenu.MdiParent = this;
+                nuevoMenu.Show();
 
-                nuevoJuego.Show();
-                this.Visible = false;
             }
-
         }
+        #endregion
+
+
     }
 }

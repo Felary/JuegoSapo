@@ -104,5 +104,47 @@
   <ItemGroup>
     <None Include="Resources\menu.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranaFrente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ferrary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cisterna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lambo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corazon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flacha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pegunta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranaAplastada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranaAtras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranaDerecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranaIzquierda.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
