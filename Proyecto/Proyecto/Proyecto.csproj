@@ -47,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="control\Preguntas.cs" />
-    <Compile Include="forms\FormContenedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FormContenedor.Designer.cs">
-      <DependentUpon>FormContenedor.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\FormJuego.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,9 +61,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="forms\FormContenedor.resx">
-      <DependentUpon>FormContenedor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormJuego.resx">
       <DependentUpon>FormJuego.cs</DependentUpon>
     </EmbeddedResource>

@@ -16,8 +16,11 @@ namespace Proyecto.forms
     public partial class FormJuego : Form
     {
         #region Atributos
+        //Inicializacion de las variables para las vidas, puntuacion y contador de preguntas
         int vidas = 3, puntuacion = 0, contPreguntas = 0;
+        //Inicializacion de los objetos de la clase SoundPlayer 
         SoundPlayer freno = new SoundPlayer(@"D:\SONIDOS\freno.wav");
+        //Inicializacion del objeto de la clase Preguntas
         Preguntas nuevasPreguntas;
         #endregion
         public FormJuego()
@@ -479,8 +482,9 @@ namespace Proyecto.forms
         }
         private void FormJuego_KeyDown(object sender, KeyEventArgs e) //Funcion para mover la rana
         {
+
             //se mueve la rana a la derecha
-            if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.D)
             {
                 //se incrementa la posicion de la rana en el eje X
                 imgRana.Left += 10;
@@ -489,7 +493,7 @@ namespace Proyecto.forms
                 imgRana.Image = Proyecto.Properties.Resources.ranaDerecha;
             }
             //se mueve la rana a la izquierda
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.A)
             {
                 //se decrementa la posicion de la rana en el eje X
                 imgRana.Left -= 10;
@@ -498,7 +502,7 @@ namespace Proyecto.forms
                 imgRana.Image = Proyecto.Properties.Resources.ranaIzquierda;
             }
             //se mueve la rana hacia arriba
-            if (e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.W)
             {
                 //se decrementa la posicion de la rana en el eje Y
                 imgRana.Top -= 10;
@@ -507,7 +511,7 @@ namespace Proyecto.forms
                 imgRana.Image = Proyecto.Properties.Resources.ranaFrente;
             }
             //se mueve la rana hacia abajo
-            if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.S)
             {
                 //se incrementa la posicion de la rana en el eje Y
                 imgRana.Top += 10;
@@ -525,7 +529,6 @@ namespace Proyecto.forms
             //Llenar el array de respuestas correctas
             nuevasPreguntas.llenarArrayCorrectas();
         }
-
         private void finJuego() //Metodo para finalizar el juego
         {
             //Si las vidas son iguales a 0 Se mostrara el formMenu
