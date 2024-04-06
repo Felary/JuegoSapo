@@ -28,12 +28,9 @@ namespace Proyecto.forms
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-
             nuevoJuego = new FormJuego();
+            nuevoJuego.MdiParent = this.MdiParent;
             nuevoJuego.Show();
-
-
-
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Proyecto.forms
     public partial class FormJuego : Form
     {
         #region Atributos
-        int vidas = 3, puntuacion = 0;
+        int vidas = 3, puntuacion = 0, contPreguntas = 0;
         SoundPlayer freno = new SoundPlayer(@"D:\SONIDOS\freno.wav");
         Preguntas nuevasPreguntas;
         #endregion
@@ -54,6 +54,8 @@ namespace Proyecto.forms
             colisionPreguntas();
             //Llamar al método para verificar la colisión con las respuestas
             colisionRespuestas();
+            //Llamar al método para finalizar el juego
+            finJuego();
         }
         public void moverImagenes() //Método para mover las imágenes
         {
@@ -314,6 +316,9 @@ namespace Proyecto.forms
                 imgPregunta.Visible = false;
                 imgFlecha.Visible = false;
 
+                //Se mueve de lugar la imgPregunta para que no colisione con la rana
+                imgPregunta.Location = new Point(3, 12);
+
                 //Se muestra el lblPregunta y las opciones de respuesta
                 lblPregunta.Visible = true;
                 txtRespuesta_1.Visible = true;
@@ -321,12 +326,13 @@ namespace Proyecto.forms
                 txtRespuesta_3.Visible = true;
 
                 //Se actualiza la pregunta en el lblPregunta
-                lblPregunta.Text = nuevasPreguntas.ArrayPreguntas[0];
+                lblPregunta.Text = nuevasPreguntas.ArrayPreguntas[contPreguntas];
 
                 //Se actualiza las opciones de respuesta en los lblRespuesta_1, lblRespuesta_2 y lblRespuesta_3
-                txtRespuesta_1.Text = nuevasPreguntas.ArrayOpciones[0, 0];
-                txtRespuesta_2.Text = nuevasPreguntas.ArrayOpciones[0, 1];
-                txtRespuesta_3.Text = nuevasPreguntas.ArrayOpciones[0, 2];
+                txtRespuesta_1.Text = nuevasPreguntas.ArrayOpciones[contPreguntas, 0];
+                txtRespuesta_2.Text = nuevasPreguntas.ArrayOpciones[contPreguntas, 1];
+                txtRespuesta_3.Text = nuevasPreguntas.ArrayOpciones[contPreguntas, 2];
+
             }
         }
         public void colisionRespuestas() //Metodo para la colision de la rana con las respuestas
@@ -335,7 +341,7 @@ namespace Proyecto.forms
             if (imgRana.Bounds.IntersectsWith(txtRespuesta_1.Bounds))
             {
                 //Se valida si la respuesta es correcta con el array de respuestas correctas
-                if (txtRespuesta_1.Text.Equals(nuevasPreguntas.ArrayCorrectas[0]))
+                if (txtRespuesta_1.Text.Equals(nuevasPreguntas.ArrayCorrectas[contPreguntas]))
                 {
                     //se incrementa la puntuacion
                     puntuacion += 100;
@@ -354,6 +360,10 @@ namespace Proyecto.forms
                     imgFlecha.Visible = true;
                     //Se aumenta el progressbar en un 10%
                     progressBar.Value += 10;
+                    //Se reubica la imgPregunta a su posicion original
+                    imgPregunta.Location = new Point(212, 599);
+                    //Se incrementa el contador de preguntas
+                    contPreguntas++;
                 }
                 //Si la respuesta es incorrecta se resta puntuacion
                 else
@@ -372,7 +382,7 @@ namespace Proyecto.forms
             {
 
                 //Se valida si la respuesta es correcta con el array de respuestas correctas
-                if (txtRespuesta_2.Text.Equals(nuevasPreguntas.ArrayCorrectas[0]))
+                if (txtRespuesta_2.Text.Equals(nuevasPreguntas.ArrayCorrectas[contPreguntas]))
                 {
                     //se incrementa la puntuacion
                     puntuacion += 100;
@@ -391,6 +401,10 @@ namespace Proyecto.forms
                     imgFlecha.Visible = true;
                     //Se aumenta el progressbar en un 10%
                     progressBar.Value += 10;
+                    //Se reubica la imgPregunta a su posicion original
+                    imgPregunta.Location = new Point(212, 599);
+                    //Se incrementa el contador de preguntas
+                    contPreguntas++;
                 }
                 //Si la respuesta es incorrecta se resta puntuacion
                 else
@@ -407,9 +421,8 @@ namespace Proyecto.forms
             //Si la rana coliciona con el lblrespuesta_3
             if (imgRana.Bounds.IntersectsWith(txtRespuesta_3.Bounds))
             {
-
                 //Se valida si la respuesta es correcta con el array de respuestas correctas
-                if (txtRespuesta_3.Text.Equals(nuevasPreguntas.ArrayCorrectas[0]))
+                if (txtRespuesta_3.Text.Equals(nuevasPreguntas.ArrayCorrectas[contPreguntas]))
                 {
                     //se incrementa la puntuacion
                     puntuacion += 100;
@@ -428,6 +441,10 @@ namespace Proyecto.forms
                     imgFlecha.Visible = true;
                     //Se aumenta el progressbar en un 10%
                     progressBar.Value += 10;
+                    //Se reubica la imgPregunta a su posicion original
+                    imgPregunta.Location = new Point(212, 599);
+                    //Se incrementa el contador de preguntas
+                    contPreguntas++;
                 }
                 //Si la respuesta es incorrecta se resta puntuacion
                 else
@@ -509,5 +526,14 @@ namespace Proyecto.forms
             nuevasPreguntas.llenarArrayCorrectas();
         }
 
+        private void finJuego() //Metodo para finalizar el juego
+        {
+            //Si las vidas son iguales a 0 Se mostrara el formMenu
+            if (vidas == 0)
+            {
+
+            }
+
+        }
     }
 }
