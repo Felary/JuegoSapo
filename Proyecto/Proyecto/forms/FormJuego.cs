@@ -18,8 +18,11 @@ namespace Proyecto.forms
         #region Atributos
         //Inicializacion de las variables para las vidas, puntuacion y contador de preguntas
         int vidas = 3, puntuacion = 0, contPreguntas = 0;
-        //Inicializacion de los objetos de la clase SoundPlayer 
-        SoundPlayer freno = new SoundPlayer(@"D:\SONIDOS\freno.wav");
+
+
+
+
+        SoundPlayer freno = new SoundPlayer("\\Resources\\freno.wav");
         //Inicializacion del objeto de la clase Preguntas
         Preguntas nuevasPreguntas;
         #endregion
