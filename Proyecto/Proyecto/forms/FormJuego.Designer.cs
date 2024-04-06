@@ -45,8 +45,12 @@
             this.imgPregunta = new System.Windows.Forms.PictureBox();
             this.imgFlecha = new System.Windows.Forms.PictureBox();
             this.txtPuntuacion = new System.Windows.Forms.TextBox();
-            this.lblRespuesta_1 = new System.Windows.Forms.Label();
             this.lblPregunta = new System.Windows.Forms.Label();
+            this.txtRespuesta_1 = new System.Windows.Forms.TextBox();
+            this.txtRespuesta_2 = new System.Windows.Forms.TextBox();
+            this.txtRespuesta_3 = new System.Windows.Forms.TextBox();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgRana)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBusAbajo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRetroArriba)).BeginInit();
@@ -233,24 +237,72 @@
             this.txtPuntuacion.Text = "0";
             this.txtPuntuacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblRespuesta_1
-            // 
-            this.lblRespuesta_1.AutoSize = true;
-            this.lblRespuesta_1.Location = new System.Drawing.Point(322, 207);
-            this.lblRespuesta_1.Name = "lblRespuesta_1";
-            this.lblRespuesta_1.Size = new System.Drawing.Size(35, 13);
-            this.lblRespuesta_1.TabIndex = 16;
-            this.lblRespuesta_1.Text = "label1";
-            // 
             // lblPregunta
             // 
             this.lblPregunta.AutoSize = true;
+            this.lblPregunta.BackColor = System.Drawing.Color.Transparent;
             this.lblPregunta.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPregunta.Location = new System.Drawing.Point(378, 399);
+            this.lblPregunta.Location = new System.Drawing.Point(243, 27);
             this.lblPregunta.Name = "lblPregunta";
-            this.lblPregunta.Size = new System.Drawing.Size(97, 33);
+            this.lblPregunta.Size = new System.Drawing.Size(0, 33);
             this.lblPregunta.TabIndex = 17;
-            this.lblPregunta.Text = "label1";
+            this.lblPregunta.Visible = false;
+            // 
+            // txtRespuesta_1
+            // 
+            this.txtRespuesta_1.BackColor = System.Drawing.Color.Tan;
+            this.txtRespuesta_1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRespuesta_1.Enabled = false;
+            this.txtRespuesta_1.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRespuesta_1.Location = new System.Drawing.Point(200, 227);
+            this.txtRespuesta_1.Name = "txtRespuesta_1";
+            this.txtRespuesta_1.Size = new System.Drawing.Size(100, 20);
+            this.txtRespuesta_1.TabIndex = 20;
+            this.txtRespuesta_1.Visible = false;
+            // 
+            // txtRespuesta_2
+            // 
+            this.txtRespuesta_2.BackColor = System.Drawing.Color.Tan;
+            this.txtRespuesta_2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRespuesta_2.Enabled = false;
+            this.txtRespuesta_2.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRespuesta_2.Location = new System.Drawing.Point(450, 227);
+            this.txtRespuesta_2.Name = "txtRespuesta_2";
+            this.txtRespuesta_2.Size = new System.Drawing.Size(100, 20);
+            this.txtRespuesta_2.TabIndex = 21;
+            this.txtRespuesta_2.Visible = false;
+            // 
+            // txtRespuesta_3
+            // 
+            this.txtRespuesta_3.BackColor = System.Drawing.Color.Tan;
+            this.txtRespuesta_3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRespuesta_3.Enabled = false;
+            this.txtRespuesta_3.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRespuesta_3.Location = new System.Drawing.Point(700, 227);
+            this.txtRespuesta_3.Name = "txtRespuesta_3";
+            this.txtRespuesta_3.Size = new System.Drawing.Size(100, 20);
+            this.txtRespuesta_3.TabIndex = 22;
+            this.txtRespuesta_3.Visible = false;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Enabled = false;
+            this.progressBar.ForeColor = System.Drawing.Color.Lime;
+            this.progressBar.Location = new System.Drawing.Point(431, 141);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(193, 20);
+            this.progressBar.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(427, 164);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 23);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Progreso";
             // 
             // FormJuego
             // 
@@ -259,8 +311,12 @@
             this.BackgroundImage = global::Proyecto.Properties.Resources.fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(945, 633);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.progressBar);
+            this.Controls.Add(this.txtRespuesta_3);
+            this.Controls.Add(this.txtRespuesta_2);
+            this.Controls.Add(this.txtRespuesta_1);
             this.Controls.Add(this.lblPregunta);
-            this.Controls.Add(this.lblRespuesta_1);
             this.Controls.Add(this.txtPuntuacion);
             this.Controls.Add(this.imgFlecha);
             this.Controls.Add(this.imgPregunta);
@@ -319,7 +375,11 @@
         private System.Windows.Forms.PictureBox imgPregunta;
         private System.Windows.Forms.PictureBox imgFlecha;
         private System.Windows.Forms.TextBox txtPuntuacion;
-        private System.Windows.Forms.Label lblRespuesta_1;
         private System.Windows.Forms.Label lblPregunta;
+        private System.Windows.Forms.TextBox txtRespuesta_1;
+        private System.Windows.Forms.TextBox txtRespuesta_2;
+        private System.Windows.Forms.TextBox txtRespuesta_3;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Label label1;
     }
 }

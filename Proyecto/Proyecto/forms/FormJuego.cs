@@ -52,6 +52,8 @@ namespace Proyecto.forms
             colisionCarros();
             //Llamar al método para verificar la colisión con las preguntas
             colisionPreguntas();
+            //Llamar al método para verificar la colisión con las respuestas
+            colisionRespuestas();
         }
         public void moverImagenes() //Método para mover las imágenes
         {
@@ -107,8 +109,14 @@ namespace Proyecto.forms
                 //la rana no puede moverse mas hacia la derecha
                 ranita.Location = new Point(910, ranita.Location.Y);
             }
+            //si la rana llega al limite superior no puede continuar
+            if (ranita.Location.Y < 227)
+            {
+                //la rana no puede moverse mas hacia arriba
+                ranita.Location = new Point(ranita.Location.X, 227);
+            }
         }
-        public void colisionCarros() //funcion para la colision de la rana con los carros
+        public void colisionCarros() //Metodo para la colision de la rana con los carros
         {
             //si la rana colisiona con un carro se muestra la imagen de la rana aplastada y se quita una vida
             if (imgRana.Bounds.IntersectsWith(imgFerraryArriba.Bounds))
@@ -298,7 +306,7 @@ namespace Proyecto.forms
                 }
             }
         }
-        public void colisionPreguntas() //funcion para la colision de la rana con las preguntas
+        public void colisionPreguntas() //Metodo para la colision de la rana con las preguntas
         {
             if (imgRana.Bounds.IntersectsWith(imgPregunta.Bounds))
             {
@@ -306,18 +314,134 @@ namespace Proyecto.forms
                 imgPregunta.Visible = false;
                 imgFlecha.Visible = false;
 
+                //Se muestra el lblPregunta y las opciones de respuesta
+                lblPregunta.Visible = true;
+                txtRespuesta_1.Visible = true;
+                txtRespuesta_2.Visible = true;
+                txtRespuesta_3.Visible = true;
+
                 //Se actualiza la pregunta en el lblPregunta
                 lblPregunta.Text = nuevasPreguntas.ArrayPreguntas[0];
 
                 //Se actualiza las opciones de respuesta en los lblRespuesta_1, lblRespuesta_2 y lblRespuesta_3
-                lblRespuesta_1.Text = nuevasPreguntas.ArrayOpciones[0, 0];
-
-
-
-
+                txtRespuesta_1.Text = nuevasPreguntas.ArrayOpciones[0, 0];
+                txtRespuesta_2.Text = nuevasPreguntas.ArrayOpciones[0, 1];
+                txtRespuesta_3.Text = nuevasPreguntas.ArrayOpciones[0, 2];
             }
         }
-        public void quitarVidas() //funcion para quitar vidas
+        public void colisionRespuestas() //Metodo para la colision de la rana con las respuestas
+        {
+            //Si la rana coliciona con el lblrespuesta_1 
+            if (imgRana.Bounds.IntersectsWith(txtRespuesta_1.Bounds))
+            {
+                //Se valida si la respuesta es correcta con el array de respuestas correctas
+                if (txtRespuesta_1.Text.Equals(nuevasPreguntas.ArrayCorrectas[0]))
+                {
+                    //se incrementa la puntuacion
+                    puntuacion += 100;
+                    //se muestra la puntuacion en el lblPuntuacion
+                    txtPuntuacion.Text = "" + puntuacion;
+
+                    //se muestra la imagen de la rana en la posicion original
+                    imgRana.Location = new Point(600, 599);
+                    //se oculta el lblPregunta y las opciones de respuesta
+                    lblPregunta.Visible = false;
+                    txtRespuesta_1.Visible = false;
+                    txtRespuesta_2.Visible = false;
+                    txtRespuesta_3.Visible = false;
+                    //se muestra la imagen de la pregunta y la flecha
+                    imgPregunta.Visible = true;
+                    imgFlecha.Visible = true;
+                    //Se aumenta el progressbar en un 10%
+                    progressBar.Value += 10;
+                }
+                //Si la respuesta es incorrecta se resta puntuacion
+                else
+                {
+                    //se decrementa la puntuacion
+                    puntuacion -= 100;
+                    //se muestra la puntuacion en el lblPuntuacion
+                    txtPuntuacion.Text = "" + puntuacion;
+                    //se muestra la imagen de la rana en la posicion original
+                    imgRana.Location = new Point(600, 599);
+                }
+
+            }
+            //Si la rana coliciona con el lblrespuesta_2
+            if (imgRana.Bounds.IntersectsWith(txtRespuesta_2.Bounds))
+            {
+
+                //Se valida si la respuesta es correcta con el array de respuestas correctas
+                if (txtRespuesta_2.Text.Equals(nuevasPreguntas.ArrayCorrectas[0]))
+                {
+                    //se incrementa la puntuacion
+                    puntuacion += 100;
+                    //se muestra la puntuacion en el lblPuntuacion
+                    txtPuntuacion.Text = "" + puntuacion;
+
+                    //se muestra la imagen de la rana en la posicion original
+                    imgRana.Location = new Point(600, 599);
+                    //se oculta el lblPregunta y las opciones de respuesta
+                    lblPregunta.Visible = false;
+                    txtRespuesta_1.Visible = false;
+                    txtRespuesta_2.Visible = false;
+                    txtRespuesta_3.Visible = false;
+                    //se muestra la imagen de la pregunta y la flecha
+                    imgPregunta.Visible = true;
+                    imgFlecha.Visible = true;
+                    //Se aumenta el progressbar en un 10%
+                    progressBar.Value += 10;
+                }
+                //Si la respuesta es incorrecta se resta puntuacion
+                else
+                {
+                    //se decrementa la puntuacion
+                    puntuacion -= 100;
+                    //se muestra la puntuacion en el lblPuntuacion
+                    txtPuntuacion.Text = "" + puntuacion;
+                    //se muestra la imagen de la rana en la posicion original
+                    imgRana.Location = new Point(600, 599);
+                }
+
+            }
+            //Si la rana coliciona con el lblrespuesta_3
+            if (imgRana.Bounds.IntersectsWith(txtRespuesta_3.Bounds))
+            {
+
+                //Se valida si la respuesta es correcta con el array de respuestas correctas
+                if (txtRespuesta_3.Text.Equals(nuevasPreguntas.ArrayCorrectas[0]))
+                {
+                    //se incrementa la puntuacion
+                    puntuacion += 100;
+                    //se muestra la puntuacion en el lblPuntuacion
+                    txtPuntuacion.Text = "" + puntuacion;
+
+                    //se muestra la imagen de la rana en la posicion original
+                    imgRana.Location = new Point(600, 599);
+                    //se oculta el lblPregunta y las opciones de respuesta
+                    lblPregunta.Visible = false;
+                    txtRespuesta_1.Visible = false;
+                    txtRespuesta_2.Visible = false;
+                    txtRespuesta_3.Visible = false;
+                    //se muestra la imagen de la pregunta y la flecha
+                    imgPregunta.Visible = true;
+                    imgFlecha.Visible = true;
+                    //Se aumenta el progressbar en un 10%
+                    progressBar.Value += 10;
+                }
+                //Si la respuesta es incorrecta se resta puntuacion
+                else
+                {
+                    //se decrementa la puntuacion
+                    puntuacion -= 100;
+                    //se muestra la puntuacion en el lblPuntuacion
+                    txtPuntuacion.Text = "" + puntuacion;
+                    //se muestra la imagen de la rana en la posicion original
+                    imgRana.Location = new Point(600, 599);
+                }
+            }
+        }
+        public void quitarVidas() //Metodo para quitar vidas
         {
             //se muestra la imagen de la rana aplastada dependiendo de la cantidad de vidas que le queden
             switch (vidas)
@@ -336,7 +460,7 @@ namespace Proyecto.forms
             //se decrementa la cantidad de vidas
             vidas--;
         }
-        private void FormJuego_KeyDown(object sender, KeyEventArgs e) //Método para mover la rana
+        private void FormJuego_KeyDown(object sender, KeyEventArgs e) //Funcion para mover la rana
         {
             //se mueve la rana a la derecha
             if (e.KeyCode == Keys.Right)
@@ -375,7 +499,7 @@ namespace Proyecto.forms
                 imgRana.Image = Proyecto.Properties.Resources.ranaAtras;
             }
         }
-        public void llenarArrays() //Método para llenar los arrays de preguntas y opciones
+        public void llenarArrays() //Metodo para llenar los arrays de preguntas y opciones
         {
             //Llenar el array de preguntas
             nuevasPreguntas.llenarArrayPreguntas();

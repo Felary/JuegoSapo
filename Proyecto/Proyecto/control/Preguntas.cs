@@ -11,7 +11,7 @@ namespace Proyecto.control
         #region Atributos
         protected string[] arrayPreguntas = new string[10];
         protected string[,] arrayOpciones = new string[10, 3];
-        protected int[] arrayCorrectas = new int[10];
+        protected string[] arrayCorrectas = new string[10];
         #endregion
 
         #region Constructor
@@ -28,7 +28,7 @@ namespace Proyecto.control
             get { return arrayOpciones; }
             set { arrayOpciones = value; }
         }
-        public int[] ArrayCorrectas
+        public string[] ArrayCorrectas
         {
             get { return arrayCorrectas; }
             set { arrayCorrectas = value; }
@@ -90,16 +90,16 @@ namespace Proyecto.control
         }
         public void llenarArrayCorrectas() //Metodo para llenar el array de correctas
         {
-            arrayCorrectas[0] = 0;
-            arrayCorrectas[1] = 1;
-            arrayCorrectas[2] = 2;
-            arrayCorrectas[3] = 2;
-            arrayCorrectas[4] = 0;
-            arrayCorrectas[5] = 0;
-            arrayCorrectas[6] = 1;
-            arrayCorrectas[7] = 2;
-            arrayCorrectas[8] = 0;
-            arrayCorrectas[9] = 2;
+            arrayCorrectas[0] = "Paris";
+            arrayCorrectas[1] = "Madrid";
+            arrayCorrectas[2] = "Berlin";
+            arrayCorrectas[3] = "Roma";
+            arrayCorrectas[4] = "Londres";
+            arrayCorrectas[5] = "Moscu";
+            arrayCorrectas[6] = "Pekin";
+            arrayCorrectas[7] = "Tokio";
+            arrayCorrectas[8] = "Canberra";
+            arrayCorrectas[9] = "Buenos Aires";
         }
         #endregion
     }
