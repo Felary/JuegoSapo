@@ -18,15 +18,14 @@ namespace Proyecto.forms
         #region Atributos
         //Inicializacion de las variables para las vidas, puntuacion y contador de preguntas
         int vidas = 3, puntuacion = 0, contPreguntas = 0;
-
-
-
-
-        SoundPlayer freno = new SoundPlayer("\\Resources\\freno.wav");
+        //Creacion de una instancia de la clase FormMenu
+        FormMenu menu;
+        //Inicializa los objetos de la clase SoundPlayer
+        SoundPlayer freno = new SoundPlayer(@"f:\sonidos\freno.wav");
         //Inicializacion del objeto de la clase Preguntas
         Preguntas nuevasPreguntas;
         #endregion
-        public FormJuego()
+        public FormJuego() //Constructor de la clase FormJuego
         {
             InitializeComponent();
             //se inicializa el objeto de la clase Preguntas
@@ -34,7 +33,6 @@ namespace Proyecto.forms
             //se llena el array de preguntas y opciones
             llenarArrays();
         }
-
         private void timer_Tick(object sender, EventArgs e) //Método para iniciar el juego
         {
             //Llamar al método para mover las imágenes
@@ -62,6 +60,8 @@ namespace Proyecto.forms
             colisionRespuestas();
             //Llamar al método para finalizar el juego
             finJuego();
+            //Se llama al metodo para aumentar la velocidad de los carros
+            velocidadCarros();
         }
         public void moverImagenes() //Método para mover las imágenes
         {
@@ -534,12 +534,191 @@ namespace Proyecto.forms
         }
         private void finJuego() //Metodo para finalizar el juego
         {
+            //Si las vidas son iguales a 0 Se mostrara la ventana formMenu
+            if (vidas == 0)
+            {
+                //Detiene el timer
+                timer.Stop();
+                //Creacion de una instancia de la clase FormMenu
+                menu = new FormMenu();
+                //Muestra el formMenu
+                menu.Show();
+                //Cierra el formJuego
+                this.Close();
+                //Muestra un cuadro de dialogo donde le pregunta al usuario si desea reinicar el juego y muestra la puntuacion
+                MessageBox.Show("GAME OVER\nPuntuación: " + puntuacion, "GAME OVER", MessageBoxButtons.OK);
+
+                //utiliza el return para salir del metodo
+                return;
+            }
+            //Si el contador de preguntas es igual a 10
+            if (contPreguntas == 10)
+            {
+                //Detiene el timer
+                timer.Stop();
+                //Creacion de una instancia de la clase FormMenu
+                menu = new FormMenu();
+                //Muestra el formMenu
+                menu.Show();
+                //Cierra el formJuego
+                this.Close();
+                //Muestra un cuadro de dialogo donde se felicita al usuario por haber ganado y muestra la puntuacion
+                MessageBox.Show("¡Felicidades! Has ganado\nPuntuación: " + puntuacion, "¡Felicidades!", MessageBoxButtons.OK);
+                //utiliza el return para salir del metodo
+                return;
+            }
+            /*
             //Si las vidas son iguales a 0 Se mostrara el formMenu
             if (vidas == 0)
             {
+                //Muestra un cuadro de dialogo donde le pregunta al usuario si desea reinicar el juego y muestra la puntuacion
+                DialogResult dialogResult = MessageBox.Show("¿Desea reiniciar el juego? Puntuación: " + puntuacion, "GAME OVER", MessageBoxButtons.YesNo);
+                //Si el usuario presiona el boton de si
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //Se reinicia el juego
+                    reiniciarJuego();
+                }
+                //Si el usuario presiona el boton de no
+                else if (dialogResult == DialogResult.No)
+                {
+                    Application.Exit();
+                }
+            }*/
+        }
+        private void velocidadCarros() //Metodo para aumentar la velocidad de los carros segun el numero de la pregunta
+        {
 
+            //Si el contador de preguntas es igual a 1
+            if (contPreguntas == 1)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 2;
+                imgLamboArriba.Left += 2;
+                imgTaxiArriba.Left += 2;
+                imgCisternaArriba.Left -= 2;
+                imgRetroArriba.Left -= 2;
+                imgFerraryAbajo.Left += 2;
+                imgTaxiAbajo.Left += 2;
+                imgBusAbajo.Left -= 2;
             }
-
+            //Si el contador de preguntas es igual a 2
+            else if (contPreguntas == 2)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 2;
+                imgLamboArriba.Left += 2;
+                imgTaxiArriba.Left += 2;
+                imgCisternaArriba.Left -= 2;
+                imgRetroArriba.Left -= 2;
+                imgFerraryAbajo.Left += 2;
+                imgTaxiAbajo.Left += 2;
+                imgBusAbajo.Left -= 2;
+            }
+            //Si el contador de preguntas es igual a 3
+            else if (contPreguntas == 3)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 2;
+                imgLamboArriba.Left += 2;
+                imgTaxiArriba.Left += 2;
+                imgCisternaArriba.Left -= 2;
+                imgRetroArriba.Left -= 2;
+                imgFerraryAbajo.Left += 2;
+                imgTaxiAbajo.Left += 2;
+                imgBusAbajo.Left -= 2;
+            }
+            //Si el contador de preguntas es igual a 4
+            else if (contPreguntas == 4)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 2;
+                imgLamboArriba.Left += 2;
+                imgTaxiArriba.Left += 2;
+                imgCisternaArriba.Left -= 2;
+                imgRetroArriba.Left -= 2;
+                imgFerraryAbajo.Left += 2;
+                imgTaxiAbajo.Left += 2;
+                imgBusAbajo.Left -= 2;
+            }
+            //Si el contador de preguntas es igual a 5
+            else if (contPreguntas == 5)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 2;
+                imgLamboArriba.Left += 2;
+                imgTaxiArriba.Left += 2;
+                imgCisternaArriba.Left -= 2;
+                imgRetroArriba.Left -= 2;
+                imgFerraryAbajo.Left += 2;
+                imgTaxiAbajo.Left += 2;
+                imgBusAbajo.Left -= 2;
+            }
+            //Si el contador de preguntas es igual a 6
+            else if (contPreguntas == 6)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 2;
+                imgLamboArriba.Left += 2;
+                imgTaxiArriba.Left += 2;
+                imgCisternaArriba.Left -= 2;
+                imgRetroArriba.Left -= 2;
+                imgFerraryAbajo.Left += 2;
+                imgTaxiAbajo.Left += 2;
+                imgBusAbajo.Left -= 2;
+            }
+            //Si el contador de preguntas es igual a 7
+            else if (contPreguntas == 7)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 2;
+                imgLamboArriba.Left += 2;
+                imgTaxiArriba.Left += 2;
+                imgCisternaArriba.Left -= 2;
+                imgRetroArriba.Left -= 2;
+                imgFerraryAbajo.Left += 2;
+                imgTaxiAbajo.Left += 2;
+                imgBusAbajo.Left -= 2;
+            }
+            //Si el contador de preguntas es igual a 8
+            else if (contPreguntas == 8)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 2;
+                imgLamboArriba.Left += 2;
+                imgTaxiArriba.Left += 2;
+                imgCisternaArriba.Left -= 2;
+                imgRetroArriba.Left -= 2;
+                imgFerraryAbajo.Left += 2;
+                imgTaxiAbajo.Left += 2;
+                imgBusAbajo.Left -= 2;
+            }
+            //Si el contador de preguntas es igual a 9
+            else if (contPreguntas == 9)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 2;
+                imgLamboArriba.Left += 2;
+                imgTaxiArriba.Left += 2;
+                imgCisternaArriba.Left -= 2;
+                imgRetroArriba.Left -= 2;
+                imgFerraryAbajo.Left += 2;
+                imgTaxiAbajo.Left += 2;
+                imgBusAbajo.Left -= 2;
+            }
+            //Si el contador de preguntas es igual a 10
+            else if (contPreguntas == 10)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 2;
+                imgLamboArriba.Left += 2;
+                imgTaxiArriba.Left += 2;
+                imgCisternaArriba.Left -= 2;
+                imgRetroArriba.Left -= 2;
+                imgFerraryAbajo.Left += 2;
+                imgTaxiAbajo.Left += 2;
+                imgBusAbajo.Left -= 2;
+            }
         }
     }
 }

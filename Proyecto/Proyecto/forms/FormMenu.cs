@@ -13,8 +13,7 @@ namespace Proyecto.forms
     public partial class FormMenu : Form
     {
         #region Atributos
-        //Instancia de la clase FormJuego
-        FormJuego nuevoJuego;
+
         #endregion
         public FormMenu()
         {
