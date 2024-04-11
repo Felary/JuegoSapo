@@ -283,7 +283,7 @@
             this.txtRespuesta_3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtRespuesta_3.Location = new System.Drawing.Point(700, 228);
             this.txtRespuesta_3.Name = "txtRespuesta_3";
-            this.txtRespuesta_3.Size = new System.Drawing.Size(100, 20);
+            this.txtRespuesta_3.Size = new System.Drawing.Size(117, 20);
             this.txtRespuesta_3.TabIndex = 22;
             this.txtRespuesta_3.Visible = false;
             // 
