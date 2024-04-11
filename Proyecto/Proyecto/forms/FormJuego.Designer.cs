@@ -254,7 +254,8 @@
             this.txtRespuesta_1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRespuesta_1.Enabled = false;
             this.txtRespuesta_1.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRespuesta_1.Location = new System.Drawing.Point(200, 227);
+            this.txtRespuesta_1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtRespuesta_1.Location = new System.Drawing.Point(200, 228);
             this.txtRespuesta_1.Name = "txtRespuesta_1";
             this.txtRespuesta_1.Size = new System.Drawing.Size(100, 20);
             this.txtRespuesta_1.TabIndex = 20;
@@ -266,7 +267,8 @@
             this.txtRespuesta_2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRespuesta_2.Enabled = false;
             this.txtRespuesta_2.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRespuesta_2.Location = new System.Drawing.Point(450, 227);
+            this.txtRespuesta_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtRespuesta_2.Location = new System.Drawing.Point(450, 228);
             this.txtRespuesta_2.Name = "txtRespuesta_2";
             this.txtRespuesta_2.Size = new System.Drawing.Size(100, 20);
             this.txtRespuesta_2.TabIndex = 21;
@@ -278,7 +280,8 @@
             this.txtRespuesta_3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRespuesta_3.Enabled = false;
             this.txtRespuesta_3.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRespuesta_3.Location = new System.Drawing.Point(700, 227);
+            this.txtRespuesta_3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtRespuesta_3.Location = new System.Drawing.Point(700, 228);
             this.txtRespuesta_3.Name = "txtRespuesta_3";
             this.txtRespuesta_3.Size = new System.Drawing.Size(100, 20);
             this.txtRespuesta_3.TabIndex = 22;

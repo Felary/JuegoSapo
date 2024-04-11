@@ -21,3 +21,14 @@ D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\obj\Debug\Proyecto.pd
 D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
 D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\bin\Debug\Proyecto.exe
 D:\Universidad\Herr Visuales\SegudoCorte\Proyecto\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\SDB-18\Source\Repos\JuegoSapo\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\SDB-18\Source\Repos\JuegoSapo\Proyecto\Proyecto\bin\Debug\Proyecto.exe
+C:\Users\SDB-18\Source\Repos\JuegoSapo\Proyecto\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\SDB-18\Source\Repos\JuegoSapo\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.AssemblyReference.cache
+C:\Users\SDB-18\Source\Repos\JuegoSapo\Proyecto\Proyecto\obj\Debug\Proyecto.forms.FormJuego.resources
+C:\Users\SDB-18\Source\Repos\JuegoSapo\Proyecto\Proyecto\obj\Debug\Proyecto.forms.FormMenu.resources
+C:\Users\SDB-18\Source\Repos\JuegoSapo\Proyecto\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
+C:\Users\SDB-18\Source\Repos\JuegoSapo\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.cache
+C:\Users\SDB-18\Source\Repos\JuegoSapo\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.CoreCompileInputs.cache
+C:\Users\SDB-18\Source\Repos\JuegoSapo\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\SDB-18\Source\Repos\JuegoSapo\Proyecto\Proyecto\obj\Debug\Proyecto.pdb

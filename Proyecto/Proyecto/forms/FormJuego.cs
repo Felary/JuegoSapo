@@ -21,7 +21,7 @@ namespace Proyecto.forms
 
 
 
-
+        //Inicializa los objetos de la clase SoundPlayer
         SoundPlayer freno = new SoundPlayer("\\Resources\\freno.wav");
         //Inicializacion del objeto de la clase Preguntas
         Preguntas nuevasPreguntas;
@@ -537,8 +537,121 @@ namespace Proyecto.forms
             //Si las vidas son iguales a 0 Se mostrara el formMenu
             if (vidas == 0)
             {
+                //Muestra un cuadro de dialogo donde le pregunta al usuario si desea reinicar el juego
+                DialogResult dialogResult = MessageBox.Show("¿Desea reiniciar el juego?", "GAME OVER", MessageBoxButtons.YesNo);
+                //Si el usuario presiona el boton de si
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //Se reinicia el juego
+                    reiniciarJuego();
 
+                }
+                //Si el usuario presiona el boton de no
+                else if (dialogResult == DialogResult.No)
+                {
+                    Application.Exit();
+                }
             }
+        }
+        private void reiniciarJuego() //metodo que reinicia el juego desde 0
+        {
+            //Se reinician las vidas, la puntuacion y el contador de preguntas
+            vidas = 3;
+            puntuacion = 0;
+            contPreguntas = 0;
+            //Se muestra la imagen de la rana en la posicion original
+            imgRana.Location = new Point(600, 599);
+            //Se muestra la imagen de la rana mirando hacia abajo
+            imgRana.Image = Proyecto.Properties.Resources.ranaAtras;
+            //Se muestra la imagen de la rana en el picturebox
+            imgCorazon_1.Image = Proyecto.Properties.Resources.corazon;
+            imgCorazon_2.Image = Proyecto.Properties.Resources.corazon;
+            imgCorazon_3.Image = Proyecto.Properties.Resources.corazon;
+            //Se muestra la puntuacion en el lblPuntuacion
+            txtPuntuacion.Text = "" + puntuacion;
+            //Se muestra la imagen de la pregunta y la flecha
+            imgPregunta.Visible = true;
+            imgFlecha.Visible = true;
+            //Se oculta el lblPregunta y las opciones de respuesta
+            lblPregunta.Visible = false;
+            txtRespuesta_1.Visible = false;
+            txtRespuesta_2.Visible = false;
+            txtRespuesta_3.Visible = false;
+            //Se reubica la imgPregunta a su posicion original
+            imgPregunta.Location = new Point(212, 599);
+            //Se reinicia el progressbar
+            progressBar.Value = 0;
+            //Se reinicia el timer
+            timer.Start();
+        }
+        private void velocidadCarros() //Metodo para aumentar la velocidad de los carros segun el numero de la pregunta
+        {
+            //Si el contador de preguntas es igual a 1
+            if (contPreguntas == 1)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 10;
+                imgLamboArriba.Left += 10;
+                imgTaxiArriba.Left += 10;
+                imgCisternaArriba.Left -= 10;
+                imgRetroArriba.Left -= 10;
+                imgFerraryAbajo.Left += 10;
+                imgTaxiAbajo.Left += 10;
+                imgBusAbajo.Left -= 10;
+            }
+            //Si el contador de preguntas es igual a 2
+            if (contPreguntas == 2)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 10;
+                imgLamboArriba.Left += 10;
+                imgTaxiArriba.Left += 10;
+                imgCisternaArriba.Left -= 10;
+                imgRetroArriba.Left -= 10;
+                imgFerraryAbajo.Left += 10;
+                imgTaxiAbajo.Left += 10;
+                imgBusAbajo.Left -= 10;
+            }
+            //Si el contador de preguntas es igual a 3
+            if (contPreguntas == 3)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 10;
+                imgLamboArriba.Left += 10;
+                imgTaxiArriba.Left += 10;
+                imgCisternaArriba.Left -= 10;
+                imgRetroArriba.Left -= 10;
+                imgFerraryAbajo.Left += 10;
+                imgTaxiAbajo.Left += 10;
+                imgBusAbajo.Left -= 10;
+            }
+            //Si el contador de preguntas es igual a 4
+            if (contPreguntas == 4)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 10;
+                imgLamboArriba.Left += 10;
+                imgTaxiArriba.Left += 10;
+                imgCisternaArriba.Left -= 10;
+                imgRetroArriba.Left -= 10;
+                imgFerraryAbajo.Left += 10;
+                imgTaxiAbajo.Left += 10;
+                imgBusAbajo.Left -= 10;
+            }
+            //Si el contador de preguntas es igual a 5
+            if (contPreguntas == 5)
+            {
+                //Se aumenta la velocidad de los carros
+                imgFerraryArriba.Left += 10;
+                imgLamboArriba.Left += 10;
+                imgTaxiArriba.Left += 10;
+                imgCisternaArriba.Left -= 10;
+                imgRetroArriba.Left -= 10;
+                imgFerraryAbajo.Left += 10;
+                imgTaxiAbajo.Left += 10;
+                imgBusAbajo.Left -= 10;
+            }
+
 
         }
     }
