@@ -153,5 +153,38 @@
   <ItemGroup>
     <None Include="Resources\fondoNivel2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelAtras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelDerecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelIzquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelFrente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muerte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fantasmaVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monstruoRosa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bolitaAzul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monstruoAmarillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calaveraNegra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monstruoDino.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

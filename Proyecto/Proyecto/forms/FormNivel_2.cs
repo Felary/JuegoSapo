@@ -21,7 +21,7 @@ namespace Proyecto.forms
         //Creacion de una instancia de la clase FormMenu
         FormMenu menu;
         //Inicializa los objetos de la clase SoundPlayer
-        SoundPlayer freno = new SoundPlayer(@"f:\sonidos\freno.wav");
+        SoundPlayer grito = new SoundPlayer(@"e:\sonidos\grito.wav");
         //Inicializacion del objeto de la clase Preguntas
         Preguntas nuevasPreguntas;
         #endregion
@@ -37,46 +37,75 @@ namespace Proyecto.forms
         {
             //Llamar al método para mover las imágenes
             moverImagenes();
-            //Llamar al método para verificar las paredes
-            paredDerecha(imgFerraryArriba);
-            paredDerecha(imgLamboArriba);
-            paredDerecha(imgTaxiArriba);
-            paredIzquierda(imgCisternaArriba);
-            paredIzquierda(imgRetroArriba);
-            paredDerecha(imgFerraryAbajo);
-            paredDerecha(imgTaxiAbajo);
-            paredIzquierda(imgBusAbajo);
+            //Llamar al método para verificar las paredes de los monstruos
+            paredDerecha(imgCalaveraNegraArriba);
+            paredDerecha(imgMonstruoAmarilloArriba);
+            paredDerecha(imgFantasmaVerdeArriba);
+            paredIzquierda(imgBolitaAzulArriba);
+            paredIzquierda(imgMonstruoDinoArriba);
+            paredIzquierda(imgMonstruoRosaArriba);
+            paredIzquierda(imgMonstruoRosaMedio);
+            paredIzquierda(imgCalaveraNegraMedio);
+            paredIzquierda(imgMonstruoDinoMedio);
+            paredDerecha(imgBolitaAzulMedio);
+            paredDerecha(imgMonstruoAmarilloMedio);
+            paredDerecha(imgFantasmaVerdeMedio);
+            paredDerecha(imgMonstruoAmarilloAbajo);
+            paredDerecha(imgBolitaAzulAbajo);
+            paredDerecha(imgMonstruoRosaAbajo);
+            paredIzquierda(imgMonstruoDinoAbajo);
+            paredIzquierda(imgCalaveraNegraAbajo);
+            paredIzquierda(imgFantasmaVerdeAbajo);
+
             //Incrementar la puntuación
             puntuacion++;
             //Mostrar la puntuación en el lblPuntuacion
             txtPuntuacion.Text = "" + puntuacion;
             //Llamar al método para verificar los bordes de la rana
-            bordesRana(imgRana);
+            bodesRafael(imgRafael);
             //Llamar al método para verificar la colisión
-            colisionCarros();
+            colisionMonstruos();
             //Llamar al método para verificar la colisión con las preguntas
-            colisionPreguntas();
+            //colisionPreguntas();
             //Llamar al método para verificar la colisión con las respuestas
-            colisionRespuestas();
+            //colisionRespuestas();
             //Llamar al método para finalizar el juego
             finJuego();
             //Se llama al metodo para aumentar la velocidad de los carros
-            velocidadCarros();
+            //velocidadCarros();
         }
         public void moverImagenes() //Método para mover las imágenes
         {
             //Mover las imágenes de arriba de izquierda a derecha
-            imgLamboArriba.Left = imgLamboArriba.Left + 10;
-            imgFerraryArriba.Left = imgFerraryArriba.Left + 10;
-            imgTaxiArriba.Left = imgTaxiArriba.Left + 10;
+            imgCalaveraNegraArriba.Left = imgCalaveraNegraArriba.Left + 10;
+            imgMonstruoAmarilloArriba.Left = imgMonstruoAmarilloArriba.Left + 10;
+            imgFantasmaVerdeArriba.Left = imgFantasmaVerdeArriba.Left + 10;
             //Mover las imágenes de arriba de derecha a izquierda
-            imgCisternaArriba.Left = imgCisternaArriba.Left - 10;
-            imgRetroArriba.Left = imgRetroArriba.Left - 10;
+            imgBolitaAzulArriba.Left = imgBolitaAzulArriba.Left - 10;
+            imgMonstruoDinoArriba.Left = imgMonstruoDinoArriba.Left - 10;
+            imgMonstruoRosaArriba.Left = imgMonstruoRosaArriba.Left - 10;
+
+
+            //Mover las imágenes de en medio de derecha a izquierda
+            imgMonstruoRosaMedio.Left = imgMonstruoRosaMedio.Left - 10;
+            imgCalaveraNegraMedio.Left = imgCalaveraNegraMedio.Left - 10;
+            imgMonstruoDinoMedio.Left = imgMonstruoDinoMedio.Left - 10;
+
+            //Mover las imágenes de en medio de izquierda a derecha
+            imgBolitaAzulMedio.Left = imgBolitaAzulMedio.Left + 10;
+            imgMonstruoAmarilloMedio.Left = imgMonstruoAmarilloMedio.Left + 10;
+            imgFantasmaVerdeMedio.Left = imgFantasmaVerdeMedio.Left + 10;
+
+
             //Mover las imágenes de abajo de izquierda a derecha
-            imgFerraryAbajo.Left = imgFerraryAbajo.Left + 10;
-            imgTaxiAbajo.Left = imgTaxiAbajo.Left + 10;
+            imgMonstruoAmarilloAbajo.Left = imgMonstruoAmarilloAbajo.Left + 10;
+            imgBolitaAzulAbajo.Left = imgBolitaAzulAbajo.Left + 10;
+            imgMonstruoRosaAbajo.Left = imgMonstruoRosaAbajo.Left + 10;
+
             //Mover las imágenes de abajo de derecha a izquierda
-            imgBusAbajo.Left = imgBusAbajo.Left - 10;
+            imgMonstruoDinoAbajo.Left = imgMonstruoDinoAbajo.Left - 10;
+            imgCalaveraNegraAbajo.Left = imgCalaveraNegraAbajo.Left - 10;
+            imgFantasmaVerdeAbajo.Left = imgFantasmaVerdeAbajo.Left - 10;
         }
         public void paredDerecha(PictureBox carrito) //funcion para el retorno de los carros de izquierda a derecha
         {
@@ -96,7 +125,7 @@ namespace Proyecto.forms
                 carrito.Location = new Point(930, carrito.Location.Y);
             }
         }
-        public void bordesRana(PictureBox ranita) //funcion para impedir que la rana se salga de la pantalla
+        public void bodesRafael(PictureBox ranita) //funcion para impedir que la rana se salga de la pantalla
         {
             //si la rana llega al limite inferior no puede continuar
             if (ranita.Location.Y > 600)
@@ -124,190 +153,438 @@ namespace Proyecto.forms
                 ranita.Location = new Point(ranita.Location.X, 227);
             }
         }
-        public void colisionCarros() //Metodo para la colision de la rana con los carros
+        public void colisionMonstruos() //Metodo para la colision de la rana con los carros
         {
-            //si la rana colisiona con un carro se muestra la imagen de la rana aplastada y se quita una vida
-            if (imgRana.Bounds.IntersectsWith(imgFerraryArriba.Bounds))
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            if (imgRafael.Bounds.IntersectsWith(imgCalaveraNegraArriba.Bounds))
             {
                 //se muestra la imagen de la rana aplastada
-                imgRana.Image = Proyecto.Properties.Resources.ranaAplastada;
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
 
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
-                //suena el freno
-                freno.Play();
+                //suena el grito
+                grito.Play();
 
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
                     //la rana vuelve a la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                 }
-                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el freno y se muestra la imagen de GAMEOVER
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
                 {
                     //se detiene el tiempo
                     timer.Stop();
                 }
             }
-            else if (imgRana.Bounds.IntersectsWith(imgLamboArriba.Bounds))
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgFantasmaVerdeArriba.Bounds))
             {
                 //se muestra la imagen de la rana aplastada
-                imgRana.Image = Proyecto.Properties.Resources.ranaAplastada;
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
 
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
-                //suena el freno
-                freno.Play();
+                //suena el grito
+                grito.Play();
 
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
                     //la rana vuelve a la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                 }
-                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el freno y se muestra la imagen de GAMEOVER
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
                 {
                     //se detiene el tiempo
                     timer.Stop();
                 }
             }
-            else if (imgRana.Bounds.IntersectsWith(imgTaxiArriba.Bounds))
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgMonstruoAmarilloArriba.Bounds))
             {
                 //se muestra la imagen de la rana aplastada
-                imgRana.Image = Proyecto.Properties.Resources.ranaAplastada;
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
 
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
-                //suena el freno
-                freno.Play();
+                //suena el grito
+                grito.Play();
 
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
                     //la rana vuelve a la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                 }
-                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el freno y se muestra la imagen de GAMEOVER
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
                 {
                     //se detiene el tiempo
                     timer.Stop();
                 }
             }
-            else if (imgRana.Bounds.IntersectsWith(imgCisternaArriba.Bounds))
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgBolitaAzulArriba.Bounds))
             {
                 //se muestra la imagen de la rana aplastada
-                imgRana.Image = Proyecto.Properties.Resources.ranaAplastada;
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
 
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
-                //suena el freno
-                freno.Play();
+                //suena el grito
+                grito.Play();
 
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
                     //la rana vuelve a la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                 }
-                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el freno y se muestra la imagen de GAMEOVER
-                {
-                    //se detiene el tiempo
-                    timer.Stop();
-
-
-                }
-            }
-            else if (imgRana.Bounds.IntersectsWith(imgRetroArriba.Bounds))
-            {
-                //se muestra la imagen de la rana aplastada
-                imgRana.Image = Proyecto.Properties.Resources.ranaAplastada;
-
-                //llamado a la funcion quitarVidas
-                quitarVidas();
-
-                //suena el freno
-                freno.Play();
-
-                //si las vidas son mayores a 0 la rana vuelve a la posicion original
-                if (vidas > 0)
-                {
-                    //la rana vuelve a la posicion original
-                    imgRana.Location = new Point(600, 599);
-                }
-                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el freno y se muestra la imagen de GAMEOVER
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
                 {
                     //se detiene el tiempo
                     timer.Stop();
                 }
             }
-            else if (imgRana.Bounds.IntersectsWith(imgFerraryAbajo.Bounds))
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgMonstruoDinoArriba.Bounds))
             {
                 //se muestra la imagen de la rana aplastada
-                imgRana.Image = Proyecto.Properties.Resources.ranaAplastada;
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
 
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
-                //suena el freno
-                freno.Play();
+                //suena el grito
+                grito.Play();
 
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
                     //la rana vuelve a la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                 }
-                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el freno y se muestra la imagen de GAMEOVER
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
                 {
                     //se detiene el tiempo
                     timer.Stop();
                 }
             }
-            else if (imgRana.Bounds.IntersectsWith(imgTaxiAbajo.Bounds))
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgMonstruoRosaArriba.Bounds))
             {
                 //se muestra la imagen de la rana aplastada
-                imgRana.Image = Proyecto.Properties.Resources.ranaAplastada;
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
 
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
-                //suena el freno
-                freno.Play();
+                //suena el grito
+                grito.Play();
 
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
                     //la rana vuelve a la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                 }
-                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el freno y se muestra la imagen de GAMEOVER
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
                 {
                     //se detiene el tiempo
                     timer.Stop();
                 }
             }
-            else if (imgRana.Bounds.IntersectsWith(imgBusAbajo.Bounds))
+
+
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgCalaveraNegraMedio.Bounds))
             {
                 //se muestra la imagen de la rana aplastada
-                imgRana.Image = Proyecto.Properties.Resources.ranaAplastada;
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
 
                 //llamado a la funcion quitarVidas
                 quitarVidas();
 
-                //suena el freno
-                freno.Play();
+                //suena el grito
+                grito.Play();
 
                 //si las vidas son mayores a 0 la rana vuelve a la posicion original
                 if (vidas > 0)
                 {
                     //la rana vuelve a la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                 }
-                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el freno y se muestra la imagen de GAMEOVER
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
+                {
+                    //se detiene el tiempo
+                    timer.Stop();
+                }
+            }
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgFantasmaVerdeMedio.Bounds))
+            {
+                //se muestra la imagen de la rana aplastada
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
+
+                //llamado a la funcion quitarVidas
+                quitarVidas();
+
+                //suena el grito
+                grito.Play();
+
+                //si las vidas son mayores a 0 la rana vuelve a la posicion original
+                if (vidas > 0)
+                {
+                    //la rana vuelve a la posicion original
+                    imgRafael.Location = new Point(600, 599);
+                }
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
+                {
+                    //se detiene el tiempo
+                    timer.Stop();
+                }
+            }
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgMonstruoAmarilloMedio.Bounds))
+            {
+                //se muestra la imagen de la rana aplastada
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
+
+                //llamado a la funcion quitarVidas
+                quitarVidas();
+
+                //suena el grito
+                grito.Play();
+
+                //si las vidas son mayores a 0 la rana vuelve a la posicion original
+                if (vidas > 0)
+                {
+                    //la rana vuelve a la posicion original
+                    imgRafael.Location = new Point(600, 599);
+                }
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
+                {
+                    //se detiene el tiempo
+                    timer.Stop();
+                }
+            }
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgBolitaAzulMedio.Bounds))
+            {
+                //se muestra la imagen de la rana aplastada
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
+
+                //llamado a la funcion quitarVidas
+                quitarVidas();
+
+                //suena el grito
+                grito.Play();
+
+                //si las vidas son mayores a 0 la rana vuelve a la posicion original
+                if (vidas > 0)
+                {
+                    //la rana vuelve a la posicion original
+                    imgRafael.Location = new Point(600, 599);
+                }
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
+                {
+                    //se detiene el tiempo
+                    timer.Stop();
+                }
+            }
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgMonstruoDinoMedio.Bounds))
+            {
+                //se muestra la imagen de la rana aplastada
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
+
+                //llamado a la funcion quitarVidas
+                quitarVidas();
+
+                //suena el grito
+                grito.Play();
+
+                //si las vidas son mayores a 0 la rana vuelve a la posicion original
+                if (vidas > 0)
+                {
+                    //la rana vuelve a la posicion original
+                    imgRafael.Location = new Point(600, 599);
+                }
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
+                {
+                    //se detiene el tiempo
+                    timer.Stop();
+                }
+            }
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgMonstruoRosaMedio.Bounds))
+            {
+                //se muestra la imagen de la rana aplastada
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
+
+                //llamado a la funcion quitarVidas
+                quitarVidas();
+
+                //suena el grito
+                grito.Play();
+
+                //si las vidas son mayores a 0 la rana vuelve a la posicion original
+                if (vidas > 0)
+                {
+                    //la rana vuelve a la posicion original
+                    imgRafael.Location = new Point(600, 599);
+                }
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
+                {
+                    //se detiene el tiempo
+                    timer.Stop();
+                }
+            }
+
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgCalaveraNegraAbajo.Bounds))
+            {
+                //se muestra la imagen de la rana aplastada
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
+
+                //llamado a la funcion quitarVidas
+                quitarVidas();
+
+                //suena el grito
+                grito.Play();
+
+                //si las vidas son mayores a 0 la rana vuelve a la posicion original
+                if (vidas > 0)
+                {
+                    //la rana vuelve a la posicion original
+                    imgRafael.Location = new Point(600, 599);
+                }
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
+                {
+                    //se detiene el tiempo
+                    timer.Stop();
+                }
+            }
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgFantasmaVerdeAbajo.Bounds))
+            {
+                //se muestra la imagen de la rana aplastada
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
+
+                //llamado a la funcion quitarVidas
+                quitarVidas();
+
+                //suena el grito
+                grito.Play();
+
+                //si las vidas son mayores a 0 la rana vuelve a la posicion original
+                if (vidas > 0)
+                {
+                    //la rana vuelve a la posicion original
+                    imgRafael.Location = new Point(600, 599);
+                }
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
+                {
+                    //se detiene el tiempo
+                    timer.Stop();
+                }
+            }
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgMonstruoAmarilloAbajo.Bounds))
+            {
+                //se muestra la imagen de la rana aplastada
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
+
+                //llamado a la funcion quitarVidas
+                quitarVidas();
+
+                //suena el grito
+                grito.Play();
+
+                //si las vidas son mayores a 0 la rana vuelve a la posicion original
+                if (vidas > 0)
+                {
+                    //la rana vuelve a la posicion original
+                    imgRafael.Location = new Point(600, 599);
+                }
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
+                {
+                    //se detiene el tiempo
+                    timer.Stop();
+                }
+            }
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgBolitaAzulAbajo.Bounds))
+            {
+                //se muestra la imagen de la rana aplastada
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
+
+                //llamado a la funcion quitarVidas
+                quitarVidas();
+
+                //suena el grito
+                grito.Play();
+
+                //si las vidas son mayores a 0 la rana vuelve a la posicion original
+                if (vidas > 0)
+                {
+                    //la rana vuelve a la posicion original
+                    imgRafael.Location = new Point(600, 599);
+                }
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
+                {
+                    //se detiene el tiempo
+                    timer.Stop();
+                }
+            }
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgMonstruoDinoAbajo.Bounds))
+            {
+                //se muestra la imagen de la rana aplastada
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
+
+                //llamado a la funcion quitarVidas
+                quitarVidas();
+
+                //suena el grito
+                grito.Play();
+
+                //si las vidas son mayores a 0 la rana vuelve a la posicion original
+                if (vidas > 0)
+                {
+                    //la rana vuelve a la posicion original
+                    imgRafael.Location = new Point(600, 599);
+                }
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
+                {
+                    //se detiene el tiempo
+                    timer.Stop();
+                }
+            }
+            //si la rafael colisiona con un monstruo se muestra la imagen de la muerte y se quita una vida
+            else if (imgRafael.Bounds.IntersectsWith(imgMonstruoRosaAbajo.Bounds))
+            {
+                //se muestra la imagen de la rana aplastada
+                imgRafael.Image = Proyecto.Properties.Resources.muerte;
+
+                //llamado a la funcion quitarVidas
+                quitarVidas();
+
+                //suena el grito
+                grito.Play();
+
+                //si las vidas son mayores a 0 la rana vuelve a la posicion original
+                if (vidas > 0)
+                {
+                    //la rana vuelve a la posicion original
+                    imgRafael.Location = new Point(600, 599);
+                }
+                else     //si las vidas son iguales a 0 se detiene el tiempo, suena el grito y se muestra la imagen de GAMEOVER
                 {
                     //se detiene el tiempo
                     timer.Stop();
@@ -316,7 +593,7 @@ namespace Proyecto.forms
         }
         public void colisionPreguntas() //Metodo para la colision de la rana con las preguntas
         {
-            if (imgRana.Bounds.IntersectsWith(imgPregunta.Bounds))
+            if (imgRafael.Bounds.IntersectsWith(imgPregunta.Bounds))
             {
                 //Se oculta la imagen de la pregunta y la flecha
                 imgPregunta.Visible = false;
@@ -344,7 +621,7 @@ namespace Proyecto.forms
         public void colisionRespuestas() //Metodo para la colision de la rana con las respuestas
         {
             //Si la rana coliciona con el lblrespuesta_1 
-            if (imgRana.Bounds.IntersectsWith(txtRespuesta_1.Bounds))
+            if (imgRafael.Bounds.IntersectsWith(txtRespuesta_1.Bounds))
             {
                 //Se valida si la respuesta es correcta con el array de respuestas correctas
                 if (txtRespuesta_1.Text.Equals(nuevasPreguntas.ArrayCorrectas[contPreguntas]))
@@ -355,7 +632,7 @@ namespace Proyecto.forms
                     txtPuntuacion.Text = "" + puntuacion;
 
                     //se muestra la imagen de la rana en la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                     //se oculta el lblPregunta y las opciones de respuesta
                     lblPregunta.Visible = false;
                     txtRespuesta_1.Visible = false;
@@ -379,12 +656,12 @@ namespace Proyecto.forms
                     //se muestra la puntuacion en el lblPuntuacion
                     txtPuntuacion.Text = "" + puntuacion;
                     //se muestra la imagen de la rana en la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                 }
 
             }
             //Si la rana coliciona con el lblrespuesta_2
-            if (imgRana.Bounds.IntersectsWith(txtRespuesta_2.Bounds))
+            if (imgRafael.Bounds.IntersectsWith(txtRespuesta_2.Bounds))
             {
 
                 //Se valida si la respuesta es correcta con el array de respuestas correctas
@@ -396,7 +673,7 @@ namespace Proyecto.forms
                     txtPuntuacion.Text = "" + puntuacion;
 
                     //se muestra la imagen de la rana en la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                     //se oculta el lblPregunta y las opciones de respuesta
                     lblPregunta.Visible = false;
                     txtRespuesta_1.Visible = false;
@@ -420,12 +697,12 @@ namespace Proyecto.forms
                     //se muestra la puntuacion en el lblPuntuacion
                     txtPuntuacion.Text = "" + puntuacion;
                     //se muestra la imagen de la rana en la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                 }
 
             }
             //Si la rana coliciona con el lblrespuesta_3
-            if (imgRana.Bounds.IntersectsWith(txtRespuesta_3.Bounds))
+            if (imgRafael.Bounds.IntersectsWith(txtRespuesta_3.Bounds))
             {
                 //Se valida si la respuesta es correcta con el array de respuestas correctas
                 if (txtRespuesta_3.Text.Equals(nuevasPreguntas.ArrayCorrectas[contPreguntas]))
@@ -436,7 +713,7 @@ namespace Proyecto.forms
                     txtPuntuacion.Text = "" + puntuacion;
 
                     //se muestra la imagen de la rana en la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                     //se oculta el lblPregunta y las opciones de respuesta
                     lblPregunta.Visible = false;
                     txtRespuesta_1.Visible = false;
@@ -460,7 +737,7 @@ namespace Proyecto.forms
                     //se muestra la puntuacion en el lblPuntuacion
                     txtPuntuacion.Text = "" + puntuacion;
                     //se muestra la imagen de la rana en la posicion original
-                    imgRana.Location = new Point(600, 599);
+                    imgRafael.Location = new Point(600, 599);
                 }
             }
         }
@@ -471,13 +748,13 @@ namespace Proyecto.forms
             {
                 case 1:
                     //se muestra la imagen de la rana aplastada en el picturebox
-                    imgCorazon_3.Image = Proyecto.Properties.Resources.ranaAplastada;
+                    imgCorazon_3.Image = Proyecto.Properties.Resources.muerte;
                     break;
                 case 2:
-                    imgCorazon_2.Image = Proyecto.Properties.Resources.ranaAplastada;
+                    imgCorazon_2.Image = Proyecto.Properties.Resources.muerte;
                     break;
                 case 3:
-                    imgCorazon_1.Image = Proyecto.Properties.Resources.ranaAplastada;
+                    imgCorazon_1.Image = Proyecto.Properties.Resources.muerte;
                     break;
             }
             //se decrementa la cantidad de vidas
@@ -490,37 +767,37 @@ namespace Proyecto.forms
             if (e.KeyCode == Keys.D)
             {
                 //se incrementa la posicion de la rana en el eje X
-                imgRana.Left += 10;
+                imgRafael.Left += 10;
 
                 //se muestra la imagen de la rana mirando a la derecha
-                imgRana.Image = Proyecto.Properties.Resources.ranaDerecha;
+                imgRafael.Image = Proyecto.Properties.Resources.rafaelDerecha;
             }
             //se mueve la rana a la izquierda
             if (e.KeyCode == Keys.A)
             {
                 //se decrementa la posicion de la rana en el eje X
-                imgRana.Left -= 10;
+                imgRafael.Left -= 10;
 
                 //se muestra la imagen de la rana mirando a la izquierda
-                imgRana.Image = Proyecto.Properties.Resources.ranaIzquierda;
+                imgRafael.Image = Proyecto.Properties.Resources.rafaelIzquierda;
             }
             //se mueve la rana hacia arriba
             if (e.KeyCode == Keys.W)
             {
                 //se decrementa la posicion de la rana en el eje Y
-                imgRana.Top -= 10;
+                imgRafael.Top -= 10;
 
                 //se muestra la imagen de la rana mirando hacia arriba
-                imgRana.Image = Proyecto.Properties.Resources.ranaFrente;
+                imgRafael.Image = Proyecto.Properties.Resources.rafaelFrente;
             }
             //se mueve la rana hacia abajo
             if (e.KeyCode == Keys.S)
             {
                 //se incrementa la posicion de la rana en el eje Y
-                imgRana.Top += 10;
+                imgRafael.Top += 10;
 
                 //se muestra la imagen de la rana mirando hacia abajo
-                imgRana.Image = Proyecto.Properties.Resources.ranaAtras;
+                imgRafael.Image = Proyecto.Properties.Resources.rafaelAtras;
             }
         }
         public void llenarArrays() //Metodo para llenar los arrays de preguntas y opciones
@@ -589,136 +866,7 @@ namespace Proyecto.forms
         private void velocidadCarros() //Metodo para aumentar la velocidad de los carros segun el numero de la pregunta
         {
 
-            //Si el contador de preguntas es igual a 1
-            if (contPreguntas == 1)
-            {
-                //Se aumenta la velocidad de los carros
-                imgFerraryArriba.Left += 2;
-                imgLamboArriba.Left += 2;
-                imgTaxiArriba.Left += 2;
-                imgCisternaArriba.Left -= 2;
-                imgRetroArriba.Left -= 2;
-                imgFerraryAbajo.Left += 2;
-                imgTaxiAbajo.Left += 2;
-                imgBusAbajo.Left -= 2;
-            }
-            //Si el contador de preguntas es igual a 2
-            else if (contPreguntas == 2)
-            {
-                //Se aumenta la velocidad de los carros
-                imgFerraryArriba.Left += 2;
-                imgLamboArriba.Left += 2;
-                imgTaxiArriba.Left += 2;
-                imgCisternaArriba.Left -= 2;
-                imgRetroArriba.Left -= 2;
-                imgFerraryAbajo.Left += 2;
-                imgTaxiAbajo.Left += 2;
-                imgBusAbajo.Left -= 2;
-            }
-            //Si el contador de preguntas es igual a 3
-            else if (contPreguntas == 3)
-            {
-                //Se aumenta la velocidad de los carros
-                imgFerraryArriba.Left += 2;
-                imgLamboArriba.Left += 2;
-                imgTaxiArriba.Left += 2;
-                imgCisternaArriba.Left -= 2;
-                imgRetroArriba.Left -= 2;
-                imgFerraryAbajo.Left += 2;
-                imgTaxiAbajo.Left += 2;
-                imgBusAbajo.Left -= 2;
-            }
-            //Si el contador de preguntas es igual a 4
-            else if (contPreguntas == 4)
-            {
-                //Se aumenta la velocidad de los carros
-                imgFerraryArriba.Left += 2;
-                imgLamboArriba.Left += 2;
-                imgTaxiArriba.Left += 2;
-                imgCisternaArriba.Left -= 2;
-                imgRetroArriba.Left -= 2;
-                imgFerraryAbajo.Left += 2;
-                imgTaxiAbajo.Left += 2;
-                imgBusAbajo.Left -= 2;
-            }
-            //Si el contador de preguntas es igual a 5
-            else if (contPreguntas == 5)
-            {
-                //Se aumenta la velocidad de los carros
-                imgFerraryArriba.Left += 2;
-                imgLamboArriba.Left += 2;
-                imgTaxiArriba.Left += 2;
-                imgCisternaArriba.Left -= 2;
-                imgRetroArriba.Left -= 2;
-                imgFerraryAbajo.Left += 2;
-                imgTaxiAbajo.Left += 2;
-                imgBusAbajo.Left -= 2;
-            }
-            //Si el contador de preguntas es igual a 6
-            else if (contPreguntas == 6)
-            {
-                //Se aumenta la velocidad de los carros
-                imgFerraryArriba.Left += 2;
-                imgLamboArriba.Left += 2;
-                imgTaxiArriba.Left += 2;
-                imgCisternaArriba.Left -= 2;
-                imgRetroArriba.Left -= 2;
-                imgFerraryAbajo.Left += 2;
-                imgTaxiAbajo.Left += 2;
-                imgBusAbajo.Left -= 2;
-            }
-            //Si el contador de preguntas es igual a 7
-            else if (contPreguntas == 7)
-            {
-                //Se aumenta la velocidad de los carros
-                imgFerraryArriba.Left += 2;
-                imgLamboArriba.Left += 2;
-                imgTaxiArriba.Left += 2;
-                imgCisternaArriba.Left -= 2;
-                imgRetroArriba.Left -= 2;
-                imgFerraryAbajo.Left += 2;
-                imgTaxiAbajo.Left += 2;
-                imgBusAbajo.Left -= 2;
-            }
-            //Si el contador de preguntas es igual a 8
-            else if (contPreguntas == 8)
-            {
-                //Se aumenta la velocidad de los carros
-                imgFerraryArriba.Left += 2;
-                imgLamboArriba.Left += 2;
-                imgTaxiArriba.Left += 2;
-                imgCisternaArriba.Left -= 2;
-                imgRetroArriba.Left -= 2;
-                imgFerraryAbajo.Left += 2;
-                imgTaxiAbajo.Left += 2;
-                imgBusAbajo.Left -= 2;
-            }
-            //Si el contador de preguntas es igual a 9
-            else if (contPreguntas == 9)
-            {
-                //Se aumenta la velocidad de los carros
-                imgFerraryArriba.Left += 2;
-                imgLamboArriba.Left += 2;
-                imgTaxiArriba.Left += 2;
-                imgCisternaArriba.Left -= 2;
-                imgRetroArriba.Left -= 2;
-                imgFerraryAbajo.Left += 2;
-                imgTaxiAbajo.Left += 2;
-                imgBusAbajo.Left -= 2;
-            }
-            //Si el contador de preguntas es igual a 10
-            else if (contPreguntas == 10)
-            {
-                //Se aumenta la velocidad de los carros
-                imgFerraryArriba.Left += 2;
-                imgLamboArriba.Left += 2;
-                imgTaxiArriba.Left += 2;
-                imgCisternaArriba.Left -= 2;
-                imgRetroArriba.Left -= 2;
-                imgFerraryAbajo.Left += 2;
-                imgTaxiAbajo.Left += 2;
-                imgBusAbajo.Left -= 2;
-            }
+
         }
     }
 }
