@@ -18,12 +18,12 @@ namespace Proyecto.forms
         #region Atributos
         //Inicializacion de las variables para las vidas, puntuacion y contador de preguntas
         int vidas = 3, puntuacion = 0, contPreguntas = 0;
-        //Creacion de una instancia de la clase FormMenu
+        //Inicializacion de los objetos de la clase FormMenu, Preguntas y FormNivel_2
         FormMenu menu;
-        //Inicializa los objetos de la clase SoundPlayer
-        SoundPlayer freno = new SoundPlayer(@"f:\sonidos\freno.wav");
-        //Inicializacion del objeto de la clase Preguntas
         Preguntas nuevasPreguntas;
+        FormNivel_2 nivel_2;
+        //Inicializa los objetos de la clase SoundPlayer
+        SoundPlayer freno = new SoundPlayer(@"e:\sonidos\freno.wav");
         #endregion
         public FormJuego() //Constructor de la clase FormJuego
         {
@@ -556,14 +556,14 @@ namespace Proyecto.forms
             {
                 //Detiene el timer
                 timer.Stop();
-                //Creacion de una instancia de la clase FormMenu
-                menu = new FormMenu();
-                //Muestra el formMenu
-                menu.Show();
+                //Creacion de una instancia de la clase FormNivel_2
+                nivel_2 = new FormNivel_2();
+                //Muestra el formNivel_2
+                nivel_2.Show();
                 //Cierra el formJuego
                 this.Close();
-                //Muestra un cuadro de dialogo donde se felicita al usuario por haber ganado y muestra la puntuacion
-                MessageBox.Show("¡Felicidades! Has ganado\nPuntuación: " + puntuacion, "¡Felicidades!", MessageBoxButtons.OK);
+                //Muestra un cuadro de dialogo donde se felicita al usuario por haber superado el nively muestra la puntuacion
+                MessageBox.Show("¡Felicidades! Has pasado de nivel\nPuntuación: " + puntuacion, "¡Felicidades!", MessageBoxButtons.OK);
                 //utiliza el return para salir del metodo
                 return;
             }

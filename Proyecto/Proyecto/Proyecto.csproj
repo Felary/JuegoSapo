@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="control\Preguntas.cs" />
+    <Compile Include="forms\FormNivel_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormNivel_2.Designer.cs">
+      <DependentUpon>FormNivel_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormJuego.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\FormNivel_2.resx">
+      <DependentUpon>FormNivel_2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormJuego.resx">
       <DependentUpon>FormJuego.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +149,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\controles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoNivel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelAtras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelDerecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelIzquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelFrente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muerte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fantasmaVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monstruoRosa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bolitaAzul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monstruoAmarillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calaveraNegra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monstruoDino.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
