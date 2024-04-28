@@ -46,11 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="forms\FormContenedor.cs">
+    <Compile Include="control\Preguntas.cs" />
+    <Compile Include="forms\FormNivel_2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\FormContenedor.Designer.cs">
-      <DependentUpon>FormContenedor.cs</DependentUpon>
+    <Compile Include="forms\FormNivel_2.Designer.cs">
+      <DependentUpon>FormNivel_2.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\FormJuego.cs">
       <SubType>Form</SubType>
@@ -66,8 +67,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="forms\FormContenedor.resx">
-      <DependentUpon>FormContenedor.cs</DependentUpon>
+    <EmbeddedResource Include="forms\FormNivel_2.resx">
+      <DependentUpon>FormNivel_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormJuego.resx">
       <DependentUpon>FormJuego.cs</DependentUpon>
@@ -103,6 +104,87 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranaFrente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ferrary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cisterna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lambo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corazon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flacha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pegunta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranaAplastada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranaAtras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranaDerecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranaIzquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\controles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoNivel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelAtras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelDerecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelIzquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rafaelFrente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muerte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fantasmaVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monstruoRosa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bolitaAzul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monstruoAmarillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calaveraNegra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monstruoDino.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

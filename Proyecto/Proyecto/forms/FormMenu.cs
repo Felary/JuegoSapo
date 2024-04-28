@@ -13,27 +13,26 @@ namespace Proyecto.forms
     public partial class FormMenu : Form
     {
         #region Atributos
-        FormJuego nuevoJuego;
+
         #endregion
         public FormMenu()
         {
             InitializeComponent();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e) //Evento click del boton salir
         {
+            //Cierra la aplicacion
             Application.Exit();
         }
-
-        private void btnJugar_Click(object sender, EventArgs e)
+        private void btnJugar_Click(object sender, EventArgs e) //Evento click del boton jugar
         {
-            if (nuevoJuego == null)
-            {
-                nuevoJuego = new FormJuego();
-                nuevoJuego.Show();
-                this.Close();
-            }
-
+            //Crea una nueva instancia de la clase FormJuego
+            FormJuego nuevoJuego = new FormJuego();
+            //Oculta el formulario actual
+            this.Hide();
+            //Muestra el formulario FormJuego
+            nuevoJuego.Show();
         }
     }
 }
