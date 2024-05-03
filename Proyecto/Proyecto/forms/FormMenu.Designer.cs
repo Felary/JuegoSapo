@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnJugar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.imgControles = new System.Windows.Forms.PictureBox();
+            this.pnlInferior = new System.Windows.Forms.Panel();
+            this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.imgControles)).BeginInit();
+            this.pnlInferior.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -91,6 +96,27 @@
             this.imgControles.TabIndex = 4;
             this.imgControles.TabStop = false;
             // 
+            // pnlInferior
+            // 
+            this.pnlInferior.Controls.Add(this.pnlSuperior);
+            this.pnlInferior.Location = new System.Drawing.Point(219, 601);
+            this.pnlInferior.Name = "pnlInferior";
+            this.pnlInferior.Size = new System.Drawing.Size(550, 30);
+            this.pnlInferior.TabIndex = 5;
+            // 
+            // pnlSuperior
+            // 
+            this.pnlSuperior.BackColor = System.Drawing.Color.ForestGreen;
+            this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperior.Name = "pnlSuperior";
+            this.pnlSuperior.Size = new System.Drawing.Size(50, 30);
+            this.pnlSuperior.TabIndex = 6;
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -98,6 +124,7 @@
             this.BackgroundImage = global::Proyecto.Properties.Resources.menu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(945, 633);
+            this.Controls.Add(this.pnlInferior);
             this.Controls.Add(this.imgControles);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnJugar);
@@ -109,6 +136,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
             ((System.ComponentModel.ISupportInitialize)(this.imgControles)).EndInit();
+            this.pnlInferior.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +147,8 @@
         private System.Windows.Forms.Button btnJugar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox imgControles;
+        private System.Windows.Forms.Panel pnlInferior;
+        private System.Windows.Forms.Panel pnlSuperior;
+        private System.Windows.Forms.Timer timer;
     }
 }
