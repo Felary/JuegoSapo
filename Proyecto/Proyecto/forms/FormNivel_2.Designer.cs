@@ -212,7 +212,6 @@
             this.imgPregunta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgPregunta.TabIndex = 13;
             this.imgPregunta.TabStop = false;
-            this.imgPregunta.Visible = false;
             // 
             // imgFlecha
             // 
@@ -224,7 +223,6 @@
             this.imgFlecha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgFlecha.TabIndex = 14;
             this.imgFlecha.TabStop = false;
-            this.imgFlecha.Visible = false;
             // 
             // txtPuntuacion
             // 
@@ -255,7 +253,7 @@
             this.txtRespuesta_1.Enabled = false;
             this.txtRespuesta_1.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRespuesta_1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtRespuesta_1.Location = new System.Drawing.Point(232, 63);
+            this.txtRespuesta_1.Location = new System.Drawing.Point(180, 152);
             this.txtRespuesta_1.Name = "txtRespuesta_1";
             this.txtRespuesta_1.Size = new System.Drawing.Size(100, 20);
             this.txtRespuesta_1.TabIndex = 20;
@@ -268,7 +266,7 @@
             this.txtRespuesta_2.Enabled = false;
             this.txtRespuesta_2.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRespuesta_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtRespuesta_2.Location = new System.Drawing.Point(449, 63);
+            this.txtRespuesta_2.Location = new System.Drawing.Point(320, 152);
             this.txtRespuesta_2.Name = "txtRespuesta_2";
             this.txtRespuesta_2.Size = new System.Drawing.Size(100, 20);
             this.txtRespuesta_2.TabIndex = 21;
@@ -281,7 +279,7 @@
             this.txtRespuesta_3.Enabled = false;
             this.txtRespuesta_3.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRespuesta_3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtRespuesta_3.Location = new System.Drawing.Point(668, 63);
+            this.txtRespuesta_3.Location = new System.Drawing.Point(587, 152);
             this.txtRespuesta_3.Name = "txtRespuesta_3";
             this.txtRespuesta_3.Size = new System.Drawing.Size(117, 20);
             this.txtRespuesta_3.TabIndex = 22;
@@ -301,7 +299,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(592, 27);
+            this.label1.Location = new System.Drawing.Point(413, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 23);
             this.label1.TabIndex = 24;

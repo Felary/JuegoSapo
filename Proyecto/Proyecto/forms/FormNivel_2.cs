@@ -66,9 +66,9 @@ namespace Proyecto.forms
             //Llamar al método para verificar la colisión
             colisionMonstruos();
             //Llamar al método para verificar la colisión con las preguntas
-            //colisionPreguntas();
+            colisionPreguntas();
             //Llamar al método para verificar la colisión con las respuestas
-            //colisionRespuestas();
+            colisionRespuestas();
             //Llamar al método para finalizar el juego
             finJuego();
             //Se llama al metodo para aumentar la velocidad de los carros
@@ -147,10 +147,10 @@ namespace Proyecto.forms
                 ranita.Location = new Point(910, ranita.Location.Y);
             }
             //si la rana llega al limite superior no puede continuar
-            if (ranita.Location.Y < 227)
+            if (ranita.Location.Y < 160)
             {
                 //la rana no puede moverse mas hacia arriba
-                ranita.Location = new Point(ranita.Location.X, 227);
+                ranita.Location = new Point(ranita.Location.X, 160);
             }
         }
         public void colisionMonstruos() //Metodo para la colision de la rana con los carros
@@ -609,12 +609,12 @@ namespace Proyecto.forms
                 txtRespuesta_3.Visible = true;
 
                 //Se actualiza la pregunta en el lblPregunta
-                lblPregunta.Text = nuevasPreguntas.ArrayPreguntas[contPreguntas];
+                lblPregunta.Text = nuevasPreguntas.ArrayPreguntasNivel2[contPreguntas];
 
                 //Se actualiza las opciones de respuesta en los lblRespuesta_1, lblRespuesta_2 y lblRespuesta_3
-                txtRespuesta_1.Text = nuevasPreguntas.ArrayOpciones[contPreguntas, 0];
-                txtRespuesta_2.Text = nuevasPreguntas.ArrayOpciones[contPreguntas, 1];
-                txtRespuesta_3.Text = nuevasPreguntas.ArrayOpciones[contPreguntas, 2];
+                txtRespuesta_1.Text = nuevasPreguntas.ArrayOpcionesNivel2[contPreguntas, 0];
+                txtRespuesta_2.Text = nuevasPreguntas.ArrayOpcionesNivel2[contPreguntas, 1];
+                txtRespuesta_3.Text = nuevasPreguntas.ArrayOpcionesNivel2[contPreguntas, 2];
 
             }
         }
@@ -624,7 +624,7 @@ namespace Proyecto.forms
             if (imgRafael.Bounds.IntersectsWith(txtRespuesta_1.Bounds))
             {
                 //Se valida si la respuesta es correcta con el array de respuestas correctas
-                if (txtRespuesta_1.Text.Equals(nuevasPreguntas.ArrayCorrectas[contPreguntas]))
+                if (txtRespuesta_1.Text.Equals(nuevasPreguntas.ArrayCorrectasNivel2[contPreguntas]))
                 {
                     //se incrementa la puntuacion
                     puntuacion += 100;
@@ -665,7 +665,7 @@ namespace Proyecto.forms
             {
 
                 //Se valida si la respuesta es correcta con el array de respuestas correctas
-                if (txtRespuesta_2.Text.Equals(nuevasPreguntas.ArrayCorrectas[contPreguntas]))
+                if (txtRespuesta_2.Text.Equals(nuevasPreguntas.ArrayCorrectasNivel2[contPreguntas]))
                 {
                     //se incrementa la puntuacion
                     puntuacion += 100;
@@ -705,7 +705,7 @@ namespace Proyecto.forms
             if (imgRafael.Bounds.IntersectsWith(txtRespuesta_3.Bounds))
             {
                 //Se valida si la respuesta es correcta con el array de respuestas correctas
-                if (txtRespuesta_3.Text.Equals(nuevasPreguntas.ArrayCorrectas[contPreguntas]))
+                if (txtRespuesta_3.Text.Equals(nuevasPreguntas.ArrayCorrectasNivel2[contPreguntas]))
                 {
                     //se incrementa la puntuacion
                     puntuacion += 100;
@@ -803,11 +803,11 @@ namespace Proyecto.forms
         public void llenarArrays() //Metodo para llenar los arrays de preguntas y opciones
         {
             //Llenar el array de preguntas
-            nuevasPreguntas.llenarArrayPreguntas();
+            nuevasPreguntas.llenarArrayPreguntasNivel2();
             //Llenar el array de opciones
-            nuevasPreguntas.llenarArrayOpciones();
+            nuevasPreguntas.llenarArrayOpcionesNivel2();
             //Llenar el array de respuestas correctas
-            nuevasPreguntas.llenarArrayCorrectas();
+            nuevasPreguntas.llenarArrayCorrectasNivel2();
         }
         private void finJuego() //Metodo para finalizar el juego
         {

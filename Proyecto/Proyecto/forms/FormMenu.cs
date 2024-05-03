@@ -29,10 +29,11 @@ namespace Proyecto.forms
         {
             //Crea una nueva instancia de la clase FormJuego
             FormJuego nuevoJuego = new FormJuego();
+            FormNivel_2 nuevoNivel = new FormNivel_2();
             //Oculta el formulario actual
             this.Hide();
             //Muestra el formulario FormJuego
-            nuevoJuego.Show();
+            nuevoNivel.Show();
         }
     }
 }
